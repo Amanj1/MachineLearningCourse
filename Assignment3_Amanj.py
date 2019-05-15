@@ -2,7 +2,6 @@ import sys
 import math as m
 from numpy import *
 import numpy as np
-from sklearn.cluster import KMeans
 
 def softmax(x):
 	"Source: https://stackoverflow.com/questions/34968722/how-to-implement-the-softmax-function-in-python"
@@ -42,8 +41,41 @@ def main():
 	softmax_arr = softmax([0.197517068238493915817328111541186358962360872184574176, 0.190619465867508038271026414263182163918924218360534969])
 	print("Out1 =",softmax_arr[0])
 	print("Out2 =",softmax_arr[1])
+	
 #######TASK2################
+	print("\nTask2: Questions\n")
+	print("a) Let’s assume that the input image size is 416x416x1 and the following information for CNN is given\n")
+	
+	print("CL1: 5x5 kernel size, 32 kernels, padding 1, Stride=1, RELU poollayer = [2 2]\n")
 
+	print("W=416, H=416, K=5, S=1, P=1, 32 filters")
+	print("O = ((W-K + 2P)/S) + 1 = ((416-5 + 2)/1) + 1 = 414")
+	print("We applied 32 filters then we will have 414 x 414 x 32 feature sets")
+	print("After applying Relu and pool layer – it will be 207 x 207 x 32\n")
+
+	print("b) Let’s assume that the input image size is 128x128x1 and the following information for CNN is given\n")
+	
+	print("CL1: 3x3 kernel size, 32 kernels,   padding 1, Stride=1, RELU poollayer = [2 2]")
+	print("CL2: 7x7 kernel size, 16 kernels,   padding 1, Stride=1, RELU poollayer = [2 2]")
+	print("CL3: 5x5 kernel size, 128 kernels,  padding 1, Stride=1, RELU poollayer = [2 2]")
+
+	print("CL1")
+	print("W=128, H=128, K=3, S=1, P=1, 32 filters")
+	print("O = ((W-K + 2P)/S) + 1 = ((128-3 + 2)/1) + 1 = 128")
+	print("32 filters --> 128 x 128 x 32 feature sets")
+	print("After applying Relu and pool layer –> 64 x 64 x 32\n")
+	
+	print("CL2")
+	print("W=64, H=64, K=7, S=1, P=1, 16 filters")
+	print("O = ((W-K + 2P)/S) + 1 = ((64-7 + 2)/1) + 1 = 60")
+	print("16 filters --> 60 x 60 x 16 feature sets")
+	print("After applying Relu and pool layer –> 30 x 30 x 32\n")
+	
+	print("CL3")
+	print("W=30, H=30, K=5, S=1, P=1, 128 filters")
+	print("O = ((W-K + 2P)/S) + 1 = ((30-5 + 2)/1) + 1 = 28")
+	print("128 filters --> 28 x 28 x 128 feature sets")
+	print("After applying Relu and pool layer –> 14 x 14 x 128\n")
 
 ######TASK3 - OPTIONAL#####
 	return None
